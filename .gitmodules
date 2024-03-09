@@ -1,0 +1,4 @@
+[submodule "ribhu/public"]
+	path = ribhu/public
+	url = https://github.com/ribhuji/ribhuji.github.io.git
+	branch = main

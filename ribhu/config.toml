@@ -8,7 +8,7 @@ pygmentsUseClasses = true
 
 [params]
   description = "Ribhu Ratnam's website"
-  copyright = "Copyright © 2024 Ribhu Ratnam"
+  copyright = "Ribhu Ratnam"
   dark = "auto"
   highlight = true
 

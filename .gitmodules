@@ -2,3 +2,6 @@
 	path = ribhu/public
 	url = https://github.com/ribhuji/ribhuji.github.io.git
 	branch = main
+[submodule "ribhu/themes/etch"]
+	path = ribhu/themes/etch
+	url = https://github.com/LukasJoswiak/etch.git

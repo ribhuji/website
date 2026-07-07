@@ -2,8 +2,6 @@
 title = "About"
 +++
 
-I am an engineer. Although my work title is Software Development Engineer, I believe I am not limited to engineering software only. 
+My name is Ribhu Ratnam. I've been writing code, reading code, and making hardware do things it probably wasn't designed for over the past 8 years. I'm an SDE2 at Amazon Web Services (AWS) in Bengaluru, where I work on AI Solutions, building the infrastructure and tooling that powers intelligent applications. Before this, I built a platform for hosting internal tools that's still running in 2026, a remote testing framework for Android, and a robot that executes actions on physical devices for card-based payment testing, which sent me deep into IoT, GCODEs, and eventually turned into a framework of its own. Before AWS, I interned at Quollab, RedCarpetUp, Tripeur, and Learnix, building everything from customer-facing apps to LMS backends and even an Arduino-based diet monitoring system. I did my undergrad in CS from IIITDM Jabalpur. I also dabble in machining, PCB design, robotics, and chess.
 
-I have worked on robots, CNC machines, PCB design to name a few. And I believe I can work on any field I would want to with some old-fashioned hard-work and a little help from the books in the nearby library.
-
-I have done my undregrad in Computer Science and Engineering from Indian Institute of Information Technology, Jabalpur. And am currently working at AWS.
+All opinions are my own.

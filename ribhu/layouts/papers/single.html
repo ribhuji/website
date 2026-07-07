@@ -1,0 +1,52 @@
+{{ define "main" }}
+<article class="paper-page">
+    <header class="paper-header">
+        <h1>{{ .Title }}</h1>
+        {{- if .Params.venue }}
+        <div class="paper-venue">{{ .Params.venue }}</div>
+        {{- end }}
+        {{- if .Params.year }}
+        <div class="paper-year">{{ .Params.year }}</div>
+        {{- end }}
+    </header>
+    
+    {{- if .Params.abstract }}
+    <div class="paper-abstract">
+        <h3>Abstract</h3>
+        {{ .Params.abstract | markdownify }}
+    </div>
+    {{- end }}
+    
+    {{- if .Params.notes }}
+    <div class="paper-notes">
+        <h3>My Notes</h3>
+        {{ .Params.notes | markdownify }}
+    </div>
+    {{- end }}
+    
+    <div class="paper-links">
+        {{- if .Params.paper_url }}
+        <a href="{{ .Params.paper_url }}" target="_blank" rel="noopener" class="paper-link">📄 Paper</a>
+        {{- end }}
+        {{- if .Params.code }}
+        <a href="{{ .Params.code }}" target="_blank" rel="noopener" class="paper-link">💻 Code</a>
+        {{- end }}
+        {{- if .Params.slides }}
+        <a href="{{ .Params.slides }}" target="_blank" rel="noopener" class="paper-link">📊 Slides</a>
+        {{- end }}
+        {{- if .Params.video }}
+        <a href="{{ .Params.video }}" target="_blank" rel="noopener" class="paper-link">▶️ Video</a>
+        {{- end }}
+    </div>
+    
+    {{- if .Params.tags }}
+    <div class="paper-tags">
+        {{- range .Params.tags }}
+        <span class="paper-tag">{{ . }}</span>
+        {{- end }}
+    </div>
+    {{- end }}
+    
+    {{ .Content }}
+</article>
+{{ end }}

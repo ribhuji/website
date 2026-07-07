@@ -28,6 +28,7 @@
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
     <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
     <title>{{ .Title }}</title>
 
     {{ if or (findRE "\\$\\$.*\\$\\$" .Content) (findRE "\\$.*\\$" .Content) }}

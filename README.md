@@ -54,12 +54,18 @@ website/
     ├── content/             # Site content
     │   ├── _index.md        # Homepage
     │   ├── about/           # About page
+    │   ├── papers/          # Papershelf (papers with notes)
     │   └── posts/           # Blog posts
     ├── layouts/             # Template overrides
+    │   ├── papers/          # Papershelf templates
+    │   │   ├── list.html    # Papers list view
+    │   │   └── single.html  # Individual paper view
     │   └── partials/
     │       ├── footer.html  # Custom footer with dynamic year
     │       └── head.html    # Custom head with KaTeX support
     ├── static/              # Static assets
+    │   ├── css/
+    │   │   └── custom.css   # Papershelf styling (no theme modification)
     │   └── images/          # Images (copied to public/)
     ├── themes/
     │   └── etch/            # Git submodule: github.com/LukasJoswiak/etch
@@ -105,6 +111,60 @@ draft = false
 ```
 
 Future-dated posts require `--buildFuture` flag to render.
+
+## Papershelf
+
+A collection of papers with personal notes. Available at `/papers/`.
+
+### Adding a Paper
+
+1. Create a new `.md` file in `content/papers/` (use kebab-case for filename)
+2. Add front matter with paper details and your notes:
+
+```yaml
+---
+title: "Paper Title"
+authors: "Author 1, Author 2"
+venue: "Conference/Journal Year"
+year: 2026
+tags: ["tag1", "tag2"]
+paper_url: "https://arxiv.org/pdf/XXXX.XXXXX"
+abstract: |
+  Paper abstract here.
+notes: |
+  **Your Notes:**
+  1. Key observation one
+  2. Key observation two
+code: "https://github.com/..."       # optional
+slides: "https://..."                 # optional
+video: "https://..."                  # optional
+---
+```
+
+### Files
+
+| File | Purpose |
+|------|---------|
+| `content/papers/*.md` | Paper content files |
+| `content/papers/_index.md` | Papershelf list page |
+| `layouts/papers/list.html` | List page template (title, venue, year, tags, links only) |
+| `layouts/papers/single.html` | Detail page template (title, venue, year, abstract, notes, links) |
+| `static/css/custom.css` | Papershelf styling |
+
+### Design Decisions
+
+- **No authors/abstract on list page**: Keeps the list clean. Click through for details.
+- **`paper_url` not `url`**: Hugo treats `url` as a special field. Use `paper_url` for the paper link.
+- **Notes format**: Use numbered lists with bold headers for observations. Reference specific sections of the paper.
+- **CSS in `static/css/custom.css`**: Avoid modifying `themes/etch/` (git submodule). Site-level overrides only.
+
+### Running Locally
+
+```bash
+cd ribhu
+hugo server -t etch --buildFuture
+# Visit http://localhost:1313/papers/
+```
 
 ## Math Support
 

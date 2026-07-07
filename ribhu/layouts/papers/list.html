@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="papershelf">
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+    
+    <ul id="papers">
+    {{- range .Pages }}
+        <li class="paper-entry">
+            <div class="paper-header">
+                <h3 class="paper-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                {{- if .Params.venue }}
+                <div class="paper-venue">{{ .Params.venue }}</div>
+                {{- end }}
+            </div>
+
+            <div class="paper-meta">
+                {{- if .Params.year }}
+                <span class="paper-year">{{ .Params.year }}</span>
+                {{- end }}
+                {{- if .Params.tags }}
+                <div class="paper-tags">
+                    {{- range .Params.tags }}
+                    <span class="paper-tag">{{ . }}</span>
+                    {{- end }}
+                </div>
+                {{- end }}
+                {{- if .Params.paper_url }}
+                <a href="{{ .Params.paper_url }}" target="_blank" rel="noopener" class="paper-link">PDF</a>
+                {{- end }}
+                {{- if .Params.code }}
+                <a href="{{ .Params.code }}" target="_blank" rel="noopener" class="paper-link">Code</a>
+                {{- end }}
+            </div>
+        </li>
+    {{- end }}
+    </ul>
+</div>
+{{ end }}

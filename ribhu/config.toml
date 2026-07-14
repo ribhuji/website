@@ -11,6 +11,7 @@ pygmentsUseClasses = true
   copyright = "Ribhu Ratnam"
   dark = "auto"
   highlight = true
+  mainSections = ["posts"]
 
 [menu]
   [[menu.main]]

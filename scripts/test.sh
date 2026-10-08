@@ -15,8 +15,8 @@ if ! grep -q "Just How Many USB Devices" "$PUBLIC_DIR/index.html"; then
     echo "FAIL: Blog post 'USB Devices' missing from homepage"
     ERRORS=$((ERRORS + 1))
 fi
-if ! grep -q "LED Light" "$PUBLIC_DIR/index.html"; then
-    echo "FAIL: Blog post 'LED Light' missing from homepage"
+if ! grep -q "Cheap LED Battens" "$PUBLIC_DIR/index.html"; then
+    echo "FAIL: Blog post 'Cheap LED Battens' missing from homepage"
     ERRORS=$((ERRORS + 1))
 fi
 if grep -q "Neural Probabilistic" "$PUBLIC_DIR/index.html"; then
